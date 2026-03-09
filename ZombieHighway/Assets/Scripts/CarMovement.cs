@@ -6,13 +6,11 @@ public class CarMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Keyboard keyboard;
 
-    // Speed
     public float forwardSpeed = 5f;
     public float sideSpeed = 5f;
 
-    // Boundaries
     public float minBoundaryX = -4.25f;
-    public float maxBoundaryY = 4.25f;
+    public float maxBoundaryX = 4.25f;
 
     void Start()
     {
@@ -43,8 +41,8 @@ public class CarMovement : MonoBehaviour
             horizontalInput = 1;
         }
 
-        // Check if at boundary and trying to move further out
-        if ((rb.position.x <= minBoundaryX && horizontalInput < 0) || (rb.position.x >= maxBoundaryY && horizontalInput > 0))
+        // Check if at boundary
+        if ((rb.position.x <= minBoundaryX && horizontalInput < 0) || (rb.position.x >= maxBoundaryX && horizontalInput > 0))
         {
             horizontalInput = 0;
         }

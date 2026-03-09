@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 181475207}
   - component: {fileID: 181475206}
   m_Layer: 0
-  m_Name: StartRoad
+  m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -205,7 +205,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 20, z: 1}
+  m_LocalScale: {x: 10, y: 25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -388,7 +388,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de4428ec82e8d9845963c82e6894411b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  forwardSpeed: 5
+  forwardSpeed: 10
+--- !u!1 &873655338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 873655340}
+  - component: {fileID: 873655339}
+  m_Layer: 0
+  m_Name: RoadManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &873655339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873655338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cefd981d2588824797a99b8e7346c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleRoadManager
+  Road: {fileID: 181475205}
+  Camera: {fileID: 223955961}
+  roadLenght: 25
+--- !u!4 &873655340
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873655338}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &942241486
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,10 +541,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 177aaca9599f2f1429970357bcbe1345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  forwardSpeed: 5
+  forwardSpeed: 10
   sideSpeed: 5
-  minBoundaryX: -4.25
-  maxBoundaryY: 4.25
 --- !u!50 &942241490
 Rigidbody2D:
   serializedVersion: 5
@@ -532,3 +577,4 @@ SceneRoots:
   - {fileID: 223955962}
   - {fileID: 181475207}
   - {fileID: 942241488}
+  - {fileID: 873655340}
