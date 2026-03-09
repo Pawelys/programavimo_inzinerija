@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,6 +21,7 @@ public class CarMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        Console.WriteLine("should be moving");
         if (keyboard == null) return;
 
         // Check what is pressed
