@@ -4,7 +4,7 @@ public class CameraMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
 
-    public float forwardSpeed = 5f;
+    public float forwardSpeed = 10f;
 
     void Start()
     {
@@ -13,7 +13,7 @@ public class CameraMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Forward velocity (always moving forward)
-        rb.linearVelocity = transform.up * forwardSpeed;
+        // Apply movement
+        rb.linearVelocity = new Vector2(0, forwardSpeed);
     }
 }

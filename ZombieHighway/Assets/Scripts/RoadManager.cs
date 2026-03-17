@@ -4,19 +4,25 @@ public class RoadManager : MonoBehaviour
 {
     public GameObject Road;
     public Camera Camera;
+    private GameObject Road2;
 
-    public float roadLenght = 25f;
+    public float roadLength = 25f;
     private float nextRoadY = 0f;
 
     void Start ()
     {
-        nextRoadY = roadLenght;
+        nextRoadY = roadLength;
+        
+        // Create second road
+        Road2 = Instantiate(Road, new Vector3(0, nextRoadY, 0), Quaternion.identity);
+
+        nextRoadY += roadLength;
     }
 
     void Update()
     {
         // Check if camera passed the middle of current road
-        if (Camera.transform.position.y >= nextRoadY - roadLenght)
+        if (Camera.transform.position.y >= nextRoadY - roadLength)
         {
             SpawnNewRoad();
         }
@@ -24,9 +30,16 @@ public class RoadManager : MonoBehaviour
 
     void SpawnNewRoad()
     {
-        // Create a new road piece at the next position
-        Instantiate(Road, new Vector3(0, nextRoadY, 0), Quaternion.identity);
+        // Find whitch road to move
+        if (Road.transform.position.y <= Camera.transform.position.y - roadLength)
+        {
+            Road.transform.position = new Vector3(0, nextRoadY, 0);
+        }
+        else if (Road2.transform.position.y <= Camera.transform.position.y - roadLength)
+        {
+            Road2.transform.position = new Vector3(0, nextRoadY, 0);
+        }
 
-        nextRoadY += roadLenght;
+        nextRoadY += roadLength;
     }
 }
