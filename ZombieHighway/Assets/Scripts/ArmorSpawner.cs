@@ -11,7 +11,7 @@ public class ArmorSpawner : MonoBehaviour
         if (armorPickupPrefab == null) return;
         if (Random.value > armorSpawnChance) return;
 
-        float[] lanesX = { -3.0f, -1.0f, 1.0f, 3.0f };
+        float[] lanesX = { -3.70f, -1.3f, 1.3f, 3.70f };
         float randomX = lanesX[Random.Range(0, lanesX.Length)];
 
         float minY = roadObject.transform.position.y - roadLength / 2f + 2f;
