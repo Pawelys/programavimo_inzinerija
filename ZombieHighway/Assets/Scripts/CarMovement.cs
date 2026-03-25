@@ -9,12 +9,12 @@ public class CarMovement : MonoBehaviour
     private float horizontalInput;
     private float currentSideSpeed;
 
-    public float forwardSpeed = 10f;
-    public float sideSpeed = 5f;
-    public float smoothTime = 0.1f;
+    private float forwardSpeed = 10f;
+    private float sideSpeed = 5f;
+    private float smoothTime = 0.1f;
 
-    public float minBoundaryX = -4.25f;
-    public float maxBoundaryX = 4.25f;
+    private float minBoundaryX = -4.25f;
+    private float maxBoundaryX = 4.25f;
 
     void Start()
     {

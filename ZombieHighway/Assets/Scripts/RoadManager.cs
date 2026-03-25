@@ -6,8 +6,8 @@ public class RoadManager : MonoBehaviour
     public Camera Camera;
     private GameObject Road2;
 
-    public float roadLength = 25f;
-    private float nextRoadY = 0f;
+    private float roadLength = 30f;
+    private float nextRoadY = -15f;
 
     private ArmorSpawner armorSpawner;
 
@@ -15,7 +15,7 @@ public class RoadManager : MonoBehaviour
     {
         armorSpawner = GetComponent<ArmorSpawner>();
 
-        nextRoadY = roadLength;
+        nextRoadY += roadLength;
 
         Road2 = Instantiate(Road, new Vector3(0, nextRoadY, 0), Quaternion.identity);
 
@@ -31,7 +31,7 @@ public class RoadManager : MonoBehaviour
 
     void Update()
     {
-        if (Camera.transform.position.y >= nextRoadY - roadLength)
+        if (Camera.transform.position.y >= nextRoadY - roadLength/2)
         {
             SpawnNewRoad();
         }
@@ -41,12 +41,12 @@ public class RoadManager : MonoBehaviour
     {
         GameObject movedRoad = null;
 
-        if (Road.transform.position.y <= Camera.transform.position.y - roadLength)
+        if (Road.transform.position.y <= Camera.transform.position.y - roadLength/2 - 5)
         {
             Road.transform.position = new Vector3(0, nextRoadY, 0);
             movedRoad = Road;
         }
-        else if (Road2.transform.position.y <= Camera.transform.position.y - roadLength)
+        else if (Road2.transform.position.y <= Camera.transform.position.y - roadLength/2 - 5)
         {
             Road2.transform.position = new Vector3(0, nextRoadY, 0);
             movedRoad = Road2;

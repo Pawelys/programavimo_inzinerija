@@ -152,11 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 177aaca9599f2f1429970357bcbe1345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarMovement
-  forwardSpeed: 10
-  sideSpeed: 5
-  smoothTime: 0.1
-  minBoundaryX: -4.25
-  maxBoundaryX: 4.25
 --- !u!50 &91147614
 Rigidbody2D:
   serializedVersion: 5
@@ -172,7 +167,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -251,13 +246,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91147612}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.9999907, w: -0.0043242625}
-  m_LocalPosition: {x: 0.02, y: -3.96, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
+  m_LocalPosition: {x: -0.55, y: -6.97, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -179.504}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
 --- !u!114 &91147617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,7 +490,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de4428ec82e8d9845963c82e6894411b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  forwardSpeed: 10
 --- !u!1 &611325183 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2253911629886400664, guid: 98f1481331662db4aa1182ec3d66cbcf, type: 3}
@@ -533,7 +527,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SimpleRoadManager
   Road: {fileID: 611325183}
   Camera: {fileID: 223955961}
-  roadLength: 25
 --- !u!4 &873655340
 Transform:
   m_ObjectHideFlags: 0
@@ -563,7 +556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ArmorSpawner
   armorPickupPrefab: {fileID: 1828279333209084171, guid: 96d8e4e83f0c69a459ea6469d28c7453, type: 3}
   armorSpawnChance: 1
-  roadLength: 25
+  roadLength: 30
 --- !u!1 &1008435299
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,15 +624,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 98f1481331662db4aa1182ec3d66cbcf, type: 3}
       propertyPath: m_LocalScale.y
-      value: 25
+      value: 23.535471
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 98f1481331662db4aa1182ec3d66cbcf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 98f1481331662db4aa1182ec3d66cbcf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10
+      value: -15.0499
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 98f1481331662db4aa1182ec3d66cbcf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -671,6 +664,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 98f1481331662db4aa1182ec3d66cbcf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 98f1481331662db4aa1182ec3d66cbcf, type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

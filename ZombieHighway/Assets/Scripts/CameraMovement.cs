@@ -4,7 +4,7 @@ public class CameraMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
 
-    public float forwardSpeed = 10f;
+    private float forwardSpeed = 10f;
 
     void Start()
     {
