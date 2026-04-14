@@ -54,6 +54,10 @@ public class Zombie : MonoBehaviour
             if (carHealth != null)
                 carHealth.TakeDamage(damageAmount);
 
+            // Pridedame tasku uz zombie sunaikinima
+            if (ScoreManager.Instance != null)
+                ScoreManager.Instance.AddScore(10);
+
             // Sunaikinamas zombie po susidūrimo
             Destroy(gameObject, 0.1f);
         }
