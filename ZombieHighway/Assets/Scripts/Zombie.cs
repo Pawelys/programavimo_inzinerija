@@ -26,6 +26,12 @@ public class Zombie : MonoBehaviour
         direction.z = 0f; // 2D žaidimas — ignoruojame Z ašį
 
         transform.position += direction * moveSpeed * Time.deltaTime;
+
+        // Pašaliname zombie, kuris praėjo pro automobilį (missed)
+        if (transform.position.y < _carTransform.position.y - 10f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Kai zombie susiduria su automobiliu
