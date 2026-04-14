@@ -8,24 +8,27 @@ public class Zombie : MonoBehaviour
 
     private Transform _carTransform;
     private bool _hasDamaged = false;  // Kad žala būtų padaryta tik vieną kartą
+    private Vector3 _moveDirection;    // Fiksuota kryptis — zombie eina tiesiai
 
     void Start()
     {
         // Randame automobilio objektą pagal tagą
         GameObject car = GameObject.FindGameObjectWithTag("Player");
         if (car != null)
+        {
             _carTransform = car.transform;
+            // Apskaičiuojame kryptį vieną kartą — zombie eis tiesiai
+            _moveDirection = (car.transform.position - transform.position).normalized;
+            _moveDirection.z = 0f;
+        }
     }
 
     void Update()
     {
         if (_carTransform == null) return;
 
-        // Zombie juda link automobilio X ašimi (eina į kelią)
-        Vector3 direction = (_carTransform.position - transform.position).normalized;
-        direction.z = 0f; // 2D žaidimas — ignoruojame Z ašį
-
-        transform.position += direction * moveSpeed * Time.deltaTime;
+        // Zombie juda tiesiai fiksuota kryptimi
+        transform.position += _moveDirection * moveSpeed * Time.deltaTime;
 
         // Pašaliname zombie, kuris praėjo pro automobilį (missed)
         if (transform.position.y < _carTransform.position.y - 10f)
