@@ -5,6 +5,7 @@ public class Zombie : MonoBehaviour
     [Header("Settings")]
     public float moveSpeed = 2f;       // Greitis einant link kelio
     public int damageAmount = 1;       // Žala automobiliui susidūrus
+    public float zombieScale = 2f;     // Zombie dydis (kad atitiktų skydo dydį)
 
     private Transform _carTransform;
     private bool _hasDamaged = false;  // Kad žala būtų padaryta tik vieną kartą
@@ -17,6 +18,8 @@ public class Zombie : MonoBehaviour
         if (car != null)
         {
             _carTransform = car.transform;
+            // Padidinamas zombie dydis
+            transform.localScale = Vector3.one * zombieScale;
             // Apskaičiuojame kryptį vieną kartą — zombie eis tiesiai
             _moveDirection = (car.transform.position - transform.position).normalized;
             _moveDirection.z = 0f;
