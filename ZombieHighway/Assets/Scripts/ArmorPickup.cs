@@ -2,14 +2,18 @@ using UnityEngine;
 
 public class ArmorPickup : MonoBehaviour
 {
-    public int armorAmount = 25;
+    public int armorAmount = 1;
     private Transform _carTransform;
+    private CarHealth _carHealth;
 
     void Start()
     {
         GameObject car = GameObject.FindGameObjectWithTag("Player");
         if (car != null)
+        {
             _carTransform = car.transform;
+            _carHealth = car.GetComponent<CarHealth>();
+        }
     }
 
     void Update()
@@ -25,8 +29,12 @@ public class ArmorPickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Picked armor: +" + armorAmount);
-            Destroy(gameObject);
+            if (_carHealth != null)
+            {
+                _carHealth.AddArmor();
+                Debug.Log("Picked armor: +" + armorAmount);
+                Destroy(gameObject);
+            }
         }
     }
 }

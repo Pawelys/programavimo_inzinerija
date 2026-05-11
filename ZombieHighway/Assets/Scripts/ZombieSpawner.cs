@@ -44,7 +44,7 @@ public class ZombieSpawner : MonoBehaviour
         // Priekyje automobilio pagal Y ašį
         float yPos = _carTransform.position.y + spawnAheadDistance;
 
-        Vector3 spawnPos = new Vector3(xPos, yPos, 0f);
+        Vector3 spawnPos = new Vector3(xPos, yPos, -1f);
         Instantiate(zombiePrefab, spawnPos, Quaternion.identity);
     }
 }
