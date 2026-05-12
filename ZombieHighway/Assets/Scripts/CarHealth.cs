@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CarHealth : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class CarHealth : MonoBehaviour
         {
             Debug.Log("Automobilis sunaikintas! Žaidimas baigtas.");
             // Čia vėliau pridėsite Game Over logiką
+            SceneManager.LoadScene("home_Scene");
         }
     }
 
