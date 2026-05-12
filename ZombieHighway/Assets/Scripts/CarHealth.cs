@@ -25,6 +25,9 @@ public class CarHealth : MonoBehaviour
         if (DamageFlash.Instance != null)
             DamageFlash.Instance.Flash();
 
+        if (CameraShake.Instance != null)
+            CameraShake.Instance.Shake();
+
         // Pirmiausia panaudojame armor jei turime
         if (_currentArmor > 0)
         {
@@ -45,6 +48,9 @@ public class CarHealth : MonoBehaviour
 
             if (DamageFlash.Instance != null)
                 DamageFlash.Instance.FlashStrong();
+
+            if (CameraShake.Instance != null)
+                CameraShake.Instance.ShakeStrong();
 
             Debug.Log("Automobilis sunaikintas! Žaidimas baigtas.");
             // Čia vėliau pridėsite Game Over logiką
