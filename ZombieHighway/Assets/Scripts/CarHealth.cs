@@ -19,6 +19,9 @@ public class CarHealth : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        if (MusicManager.Instance != null)
+            MusicManager.Instance.PlayZombieHit();
+
         // Pirmiausia panaudojame armor jei turime
         if (_currentArmor > 0)
         {
@@ -34,6 +37,9 @@ public class CarHealth : MonoBehaviour
 
         if (_currentHealth <= 0)
         {
+            if (MusicManager.Instance != null)
+                MusicManager.Instance.PlayCrash();
+
             Debug.Log("Automobilis sunaikintas! Žaidimas baigtas.");
             // Čia vėliau pridėsite Game Over logiką
             SceneManager.LoadScene("home_Scene");

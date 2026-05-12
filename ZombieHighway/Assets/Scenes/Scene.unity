@@ -523,7 +523,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MusicManager
   menuMusic: {fileID: 8300000, guid: 2947ee9e465df5e4ba3732a479d7149a, type: 3}
   gameMusic: {fileID: 8300000, guid: 249e90938cd8dc74bbe0c83ac00bf8d3, type: 3}
-  volume: 0.5
+  musicVolume: 0.5
+  shieldPickupSfx: {fileID: 8300000, guid: 7e1dbb064b656494fade63d296c83f21, type: 3}
+  zombieHitSfx: {fileID: 8300000, guid: 3d844354345e59a44bc3672010d2f480, type: 3}
+  crashSfx: {fileID: 8300000, guid: 29dfdc10a1e4b084c9e0f5cf171115e7, type: 3}
+  sfxVolume: 1
 --- !u!82 &263508607
 AudioSource:
   m_ObjectHideFlags: 0

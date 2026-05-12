@@ -32,6 +32,8 @@ public class ArmorPickup : MonoBehaviour
             if (_carHealth != null)
             {
                 _carHealth.AddArmor();
+                if (MusicManager.Instance != null)
+                    MusicManager.Instance.PlayShieldPickup();
                 Debug.Log("Picked armor: +" + armorAmount);
                 Destroy(gameObject);
             }
